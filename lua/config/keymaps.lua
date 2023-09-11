@@ -14,3 +14,4 @@ vim.keymap.set({ "n", "v" }, "<Leader>y", '"+y', { noremap = true, silent = true
 vim.keymap.set({ "n" }, "<Leader>fe", "<Cmd>Neotree toggle<CR>", { noremap = true, silent = true })
 
 vim.keymap.set({ "n" }, "<Leader>fo", "<Cmd>Telescope oldfiles<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n" }, "<Leader>tf", "<Cmd>ToggleTerm<CR>", { noremap = true, silent = true })

@@ -1,18 +1,18 @@
-vim.opt.number = true
-vim.opt.relativenumber = true
-
--- use global statusline
-vim.opt.laststatus = 3
-vim.g.mapleader = ' '
--- disable mouse
-vim.opt.mouse = "a" --enable mouse mode 
-
-
-
-vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = 'gray', bold = true })
-vim.api.nvim_set_hl(0, 'LineNr', { fg = 'yellow', bold = true })
-vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = 'gray', bold = true })
-vim.opt.cursorline = true -- Enable highlighting of the current line
-vim.opt.ignorecase = true -- Ignore case
+vim.opt.number = true                                               --enable line numbers
+vim.opt.relativenumber = true                                       --make line numbers relative
+vim.opt.termguicolors = true                                        --enable all colors supported ny nvim
+vim.opt.laststatus = 3                                              -- size of status line
+vim.g.mapleader = ' '                                               -- set global leader key to space (also defined in keymaps.lua)
+vim.opt.mouse = "a"                                                 --enable mouse mode
+vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = 'gray', bold = true }) --set color for line numbers(I find theme colors to be a bit hard to read)
+vim.api.nvim_set_hl(0, 'LineNr', { fg = 'yellow', bold = true })    --set color for line numbers(I find theme colors to be a bit hard to read)
+vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = 'gray', bold = true }) --set color for line numbers(I find theme colors to be a bit hard to read)
+vim.opt.cursorline = true                                           -- Enable highlighting of the current line
+vim.opt.ignorecase = true                                           -- Ignore case
+vim.opt.smartcase = true                                            -- Don't ignore case with capitals
 vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
-vim.opt.smartcase = true -- Don't ignore case with capitals
+
+
+
+
+---------------------------------------------------LINE JUST TO MAKE JUMPING EASIER---------------------------------------------------------------
