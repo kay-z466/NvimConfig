@@ -13,3 +13,4 @@ return {
     { t("Another snippet.") }
   ),
 }
+--
