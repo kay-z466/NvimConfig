@@ -1,7 +1,6 @@
 require("config.options")
 require("config.keymaps")
 require("config.lazy")
+require("config.configsnippets")
 
 
--- will move in future 
-require("luasnip.loaders.from_vscode").lazy_load()
