@@ -3,3 +3,4 @@ require("config.keymaps")
 require("config.lazy")
 require("config.configsnippets")
 require("config.autocmd")
+----
