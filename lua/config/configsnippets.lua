@@ -1,5 +1,3 @@
--- Yes, we're just executing a bunch of Vimscript, but this is the officially
--- endorsed method; see https://github.com/L3MON4D3/LuaSnip#keymaps
 vim.cmd[[
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
 smap <silent><expr> <Tab> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'
