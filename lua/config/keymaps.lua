@@ -13,5 +13,9 @@ vim.keymap.set({ "n", "v" }, "<Leader>y", '"+y', { noremap = true, silent = true
 -- PLUGIN KEYBINDINGS
 vim.keymap.set({ "n" }, "<Leader>fe", "<Cmd>Neotree toggle<CR>", { noremap = true, silent = true })
 
+vim.keymap.set({ "n" }, "<Leader>bb", "<Cmd>Telescope buffers<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<Leader>fo", "<Cmd>Telescope oldfiles<CR>", { noremap = true, silent = true })
-vim.keymap.set({ "n" }, "<Leader>tf", "<Cmd>ToggleTerm<CR>", { noremap = true, silent = true })
+
+
+vim.keymap.set({ "n" }, "<Leader>tf", "<Cmd>terminal<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "t" }, "jj", "<C-\\><C-n>", { noremap = true, silent = true })
