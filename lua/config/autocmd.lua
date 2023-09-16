@@ -1,0 +1,1 @@
+-- Define a function to set custom LineNr highlighting
