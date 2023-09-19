@@ -8,3 +8,4 @@ require("config.lazy")                        -- configuration for configuring p
 require("config.configsnippets")              -- configuration for cnfiguring snippets via LuaSnip                    
 require("config.autocmd")                     -- configuration for setting auto commands              
 --------------------------------------------------------------------------------------------------------------
+
