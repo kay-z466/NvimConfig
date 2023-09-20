@@ -9,3 +9,4 @@ require("config.configsnippets")              -- configuration for cnfiguring sn
 require("config.autocmd")                     -- configuration for setting auto commands              
 --------------------------------------------------------------------------------------------------------------
 
+
