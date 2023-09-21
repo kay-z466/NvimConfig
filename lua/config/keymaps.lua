@@ -21,12 +21,16 @@ vim.keymap.set("n", "<Leader>wh", "<Cmd>split<CR>", { noremap = true, silent = t
 vim.keymap.set("n", "<Leader>wq", "<Cmd>wq<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>qq", "<Cmd>q!<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>bd", "<Cmd>bd<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<Leader>gg", "gg", { noremap = true, silent = true })  -- move to begginig of file  
-vim.keymap.set("n", "<Leader>gb", "G", { noremap = true, silent = true }) -- move to end of file
-vim.keymap.set("n", "<Leader>gh", "$", { noremap = true, silent = true }) -- move to end of line
-vim.keymap.set("n", "<Leader>gf", "_", { noremap = true, silent = true }) -- move to end of file 
-vim.keymap.set("n", "<Leader>fn", " :ene <BAR> startinsert <CR>", { noremap = true, silent = true }) -- Creates new file in insert mode 
-vim.keymap.set("n", "<Leader>cd", " :cd %:p:h <CR>", { noremap = true, silent = true })-- changes Current working directory to the directory of the file 
+vim.keymap.set("n", "<Leader>gg", "gg", { noremap = true, silent = true })                           -- move to begginig of file
+vim.keymap.set("n", "<Leader>gb", "G", { noremap = true, silent = true })                            -- move to end of file
+vim.keymap.set("n", "<Leader>gh", "$", { noremap = true, silent = true })                            -- move to end of line
+vim.keymap.set("n", "<Leader>gf", "_", { noremap = true, silent = true })                            -- move to end of file
+vim.keymap.set("n", "<Leader>fn", " :ene <BAR> startinsert <CR>", { noremap = true, silent = true }) -- Creates new file in insert mode
+vim.keymap.set("n", "<Leader>cd", " :cd %:p:h <CR>", { noremap = true, silent = true })              -- changes Current working directory to the directory of the file
+
+----------------------------------------------------------------------------------------------------------------------------
+-- LSP KEYBINDINGS
+vim.keymap.set("n", "<Leader>cf", "<Cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true })
 
 -- map leader+y to copy to system clipboard in normal and visual mode
 vim.keymap.set({ "n", "v" }, "<Leader>y", '"+y', { noremap = true, silent = true })
@@ -85,6 +89,4 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
-
-
-
+--------------------------------------------------------------------------LINE-----------------------------------------------------------------------
