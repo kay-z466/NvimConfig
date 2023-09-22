@@ -7,5 +7,5 @@ require("config.keymaps")             -- configuration for  setting keymap
 require("config.lazy")                -- configuration for configuring package manager LAZY.nvim
 require("config.configsnippets")      -- configuration for cnfiguring snippets via LuaSnip
 require("config.autocmd")             -- configuration for setting auto commands
-require("config.customfunctions")     --  configuration for setting custom lua functions
+require("config.customfunctions")     -- configuration for setting custom lua functions
 --------------------------------------------------------------------------------------------------------------
