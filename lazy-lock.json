@@ -4,7 +4,6 @@
   "actions-preview.nvim": { "branch": "master", "commit": "5650c76abfb84d6498330dd045657ba630ecdbba" },
   "alpha-nvim": { "branch": "main", "commit": "234822140b265ec4ba3203e3e0be0e0bb826dff5" },
   "autoclose.nvim": { "branch": "main", "commit": "37e11589aac55b0e8810dc5865f898f9cb36fef6" },
-  "caret.nvim": { "branch": "main", "commit": "405cbbbe674126bd216f62d77313e182a47c623f" },
   "catppuccin": { "branch": "main", "commit": "1fb73618c103e92cbd1b7147f34cfd615af24b1e" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-cmdline": { "branch": "main", "commit": "8ee981b4a91f536f52add291594e89fb6645e451" },
@@ -33,7 +32,6 @@
   "persistence.nvim": { "branch": "main", "commit": "4b8051c01f696d8849a5cb8afa9767be8db16e40" },
   "plenary.nvim": { "branch": "master", "commit": "9ce85b0f7dcfe5358c0be937ad23e456907d410b" },
   "telescope.nvim": { "branch": "master", "commit": "c1a2af0af69e80e14e6b226d3957a064cd080805" },
-  "tokyonight.nvim": { "branch": "main", "commit": "9a01eada39558dc3243278e6805d90e8dff45dc0" },
   "vim-startuptime": { "branch": "master", "commit": "454b3de856b7bd298700de33d79774ca9b9e3875" },
   "vimtex": { "branch": "master", "commit": "d7221267f5642e5904a45a8e661f751dff26c1a9" }
 }
