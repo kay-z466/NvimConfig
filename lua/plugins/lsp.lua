@@ -1,5 +1,4 @@
-vim.keymap.set("n", "<space>d", vim.diagnostic.open_float)
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -20,6 +19,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 local languages = {
 	-- "pyright",
 	"texlab",
+	"julials"
 }
 
 return {
@@ -39,6 +39,9 @@ return {
 				},
 			})
 			require("lspconfig").pylsp.setup({
+				capabilities = capabilities,
+			})
+			require("lspconfig").bashls.setup({
 				capabilities = capabilities,
 			})
 			require("lspconfig").tailwindcss.setup({
@@ -61,9 +64,9 @@ return {
 			)
 
 			vim.lsp.handlers["textDocument/publishDiagnostics"] =
-			    vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-				    virtual_text = false,
-			    })
+				vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+					virtual_text = false,
+				})
 		end,
 	},
 	{
