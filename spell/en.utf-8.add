@@ -1,0 +1,13 @@
+config
+init
+lua
+lsp
+buf
+nowrap
+makesession
+txt
+julialsp
+catpucchin
+Lualine
+Tmux
+TODO

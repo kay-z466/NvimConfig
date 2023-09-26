@@ -15,13 +15,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 	end,
 })
-
 local languages = {
-	-- "pyright",
 	"texlab",
 	"julials"
 }
-
 return {
 	{
 		"neovim/nvim-lspconfig",
@@ -44,11 +41,11 @@ return {
 			require("lspconfig").bashls.setup({
 				capabilities = capabilities,
 			})
-			require("lspconfig").tailwindcss.setup({
-				on_attach = function()
-					require("tailwindcss-colors").buf_attach(0)
-				end,
-			})
+			-- require("lspconfig").tailwindcss.setup({
+			-- 	on_attach = function()
+			-- 		require("tailwindcss-colors").buf_attach(0)
+			-- 	end,
+			-- })
 
 			for _, language in pairs(languages) do
 				require("lspconfig")[language].setup({
