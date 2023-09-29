@@ -1,5 +1,6 @@
--- test function 
--- test function 
+-- test function
+-- test function
 function Foo()
-    print("Test function Runs!")
- end
+	print("Test function Runs!")
+end
+

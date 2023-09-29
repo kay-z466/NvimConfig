@@ -31,6 +31,7 @@ vim.keymap.set("n", "<Leader>cd", " :cd %:p:h <CR>", { noremap = true, silent = 
 vim.keymap.set("n", "<Leader>t[", "<Cmd>tabprevious<CR>", { noremap = true, silent = true })         --keybindings for tabs
 vim.keymap.set("n", "<Leader>t]", "<Cmd>tabnext<CR>", { noremap = true, silent = true })             --keybindings for tabs
 vim.keymap.set("n", "<Leader>tn", "<Cmd>tabnew<CR>", { noremap = true, silent = true })              --keybindings for tabs
+vim.keymap.set("n", "<Leader>nh", "<Cmd>noh<CR>", { noremap = true, silent = true })
 
 ----------------------------------------------------------------------------------------------------------------------------
 -- LSP KEYBINDINGS
