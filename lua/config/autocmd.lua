@@ -7,4 +7,3 @@ vim.cmd [[
   augroup END
 ]]
 
-

@@ -55,6 +55,7 @@ vim.keymap.set({ "n" }, "<Leader>fo", "<Cmd>Telescope oldfiles<CR>", { noremap =
 
 vim.keymap.set({ "n" }, "<Leader>tf", "<Cmd>terminal<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "t" }, "jj", "<C-\\><C-n>", { noremap = true, silent = true })
+vim.keymap.set({ "t" }, "jk", "<C-\\><C-n> <BAR> :bprevious <CR> ", { noremap = true, silent = true })
 
 
 
