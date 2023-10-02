@@ -23,7 +23,7 @@ return {
 						require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
 					end,
 				},
-			window = {
+				window = {
 					completion = cmp.config.window.bordered(),
 					documentation = cmp.config.window.bordered(),
 				},
@@ -47,6 +47,8 @@ return {
 					-- keep command mode completion enabled
 					if vim.api.nvim_get_mode().mode == "c" then
 						return true
+					elseif vim.bo.buftype == 'prompt' then
+						return false
 					else
 						return not context.in_treesitter_capture("comment")
 						    and not context.in_syntax_group("Comment")

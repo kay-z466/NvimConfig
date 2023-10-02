@@ -1,4 +1,3 @@
-
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 
 vim.api.nvim_create_autocmd("LspAttach", {

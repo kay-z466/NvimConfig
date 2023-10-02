@@ -9,6 +9,3 @@ require("config.configsnippets")      -- configuration for cnfiguring snippets v
 require("config.autocmd")             -- configuration for setting auto commands
 require("config.customfunctions")     -- configuration for setting custom lua functions
 --------------------------------------------------------------------------------------------------------------
-
-
-vim.g.vimtex_view_method = 'zathura'
