@@ -30,6 +30,9 @@ keymap("n", "<Leader>t[", "<Cmd>tabprevious<CR>", { noremap = true, silent = tru
 keymap("n", "<Leader>t]", "<Cmd>tabnext<CR>", { noremap = true, silent = true })             --keybindings for tabs
 keymap("n", "<Leader>tn", "<Cmd>tabnew<CR>", { noremap = true, silent = true })              --keybindings for tabs
 keymap("n", "<Leader>nh", "<Cmd>noh<CR>", { noremap = true, silent = true })
+keymap("n", "<Leader>ut", "<Cmd>:colorscheme <TAB>", { noremap = true, silent = true })
+keymap("n", "<Leader>a", "A", { noremap = true, silent = true })          
+keymap("n", "<Leader>i", "I", { noremap = true, silent = true })          
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- LSP KEYBINDINGS

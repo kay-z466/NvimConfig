@@ -1,3 +1,4 @@
 return {
-	"rose-pine/neovim"
+	"rose-pine/neovim",
+  "folke/tokyonight.nvim"
 }
