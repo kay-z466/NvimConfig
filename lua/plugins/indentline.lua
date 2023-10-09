@@ -22,6 +22,8 @@ return {
 				"neo-tree",
 				"Trouble",
 				"text",
+				"markdown",
+				"latex",
 			}
 		}
 	}
