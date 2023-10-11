@@ -1,4 +1,4 @@
----[[ - ]] init.lua is the where our configurations lives [equivalent to init.vim]
+-- init.lua is the where our configurations lives [equivalent to init.vim]
 -- We can put all our settings in this file but, instead we have opted for a easier
 -- managed modular config file system
 ------------------------------------------------------------------------------------------------------------

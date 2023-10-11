@@ -17,7 +17,7 @@ return {
 					"vimdoc",
 					"tsx",
 					"julia",
-				},
+			},
 				highlight = { enable = true },
 				indent = { enable = false },
 				autotag = { enable = true },
