@@ -1,4 +1,3 @@
-vim.g.mapleader = ' '                                                   -- set global leader key to space (also defined in keymaps.lua)
 vim.opt.number = true                                                   -- enable line numbers
 vim.opt.relativenumber = true                                           -- make line numbers relative
 vim.opt.termguicolors = true                                            -- enable all colors supported ny nvim
@@ -16,3 +15,4 @@ vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = '#6E808A', bold = true })  -- set c
 vim.api.nvim_set_hl(0, 'LineNr', { fg = 'yellow', bold = true })        -- set color for line numbers(I find theme colors to be a bit hard to read)
 vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#6E808A', bold = true })  -- set color for line numbers(I find theme colors to be a bit hard to read)
 vim.g.vimtex_view_method = 'zathura'                                    -- Set pdfviewer for VimTex to Zathura
+-- vim.g.vimtex_quickfix_enabled = 0
