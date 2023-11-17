@@ -37,6 +37,8 @@ return {
 			require("lspconfig").pylsp.setup({
 				capabilities = capabilities,
 			})
+
+            require('lspconfig.ui.windows').default_options.border = 'single'
 			require("lspconfig").bashls.setup({
 				capabilities = capabilities,
 			})

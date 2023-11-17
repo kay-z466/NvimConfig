@@ -32,6 +32,7 @@ keymap("n", "<Leader>i", "I", { noremap = true, silent = true })                
 keymap({ "t" }, "jj", "<C-\\><C-n>", { noremap = true, silent = true })                        -- Exit terminal mode
 keymap({ "t" }, "jk", "<C-\\><C-n> <BAR> :bprevious <CR> ", { noremap = true, silent = true }) -- Jump o previous buffer from terminal mode
 keymap({ "n" }, "<Leader>bp", ":bprevious <CR> ", { noremap = true, silent = true })           -- Jump to previous buffer
+keymap({ "n" }, "<Leader>bv", ":bprevious <CR> ", { noremap = true, silent = true })           -- Jump to previous buffer
 keymap({ "n" }, "<Leader>bn", ":bnext<CR> ", { noremap = true, silent = true })                -- Jump to next buffer
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- LSP KEYBINDINGS
@@ -77,3 +78,5 @@ keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 -- BETTER TERMINAL NAVIGATION
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
+keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
+keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
