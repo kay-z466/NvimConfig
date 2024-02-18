@@ -1,6 +1,6 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
+local term_opts = { silent =true }
 
 -- Shorten function name
 local keymap = vim.keymap.set
@@ -21,7 +21,8 @@ vim.keymap.set("n", "<Leader>wv", "<Cmd>vsplit<CR>", { noremap = true, silent = 
 vim.keymap.set("n", "<Leader>wh", "<Cmd>split<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>wq", "<Cmd>wq<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>qq", "<Cmd>q!<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<Leader>bd", "<Cmd>bd<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>bd", "<Cmd>bd!<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>bq", "<Cmd>bd<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>gg", "gg", { noremap = true, silent = true })                           -- move to begginig of file
 vim.keymap.set("n", "<Leader>gb", "G", { noremap = true, silent = true })                            -- move to end of file
 vim.keymap.set("n", "<Leader>gh", "$", { noremap = true, silent = true })                            -- move to end of line
@@ -41,7 +42,6 @@ vim.api.nvim_set_keymap('n', '<leader>d[', '<cmd>lua vim.diagnostic.goto_prev()<
 vim.api.nvim_set_keymap('n', '<leader>d]', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>dt', '<cmd>Telescope diagnostics<CR>', { noremap = true, silent = true })
 
-
 -- map leader+y to copy to system clipboard in normal and visual mode
 vim.keymap.set({ "n", "v" }, "<Leader>y", '"+y', { noremap = true, silent = true })
 
@@ -51,15 +51,11 @@ vim.keymap.set({ "n" }, "<Leader>fe", "<Cmd>Neotree toggle<CR>", { noremap = tru
 
 vim.keymap.set({ "n" }, "<Leader>bb", "<Cmd>Telescope buffers<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<Leader>fo", "<Cmd>Telescope oldfiles<CR>", { noremap = true, silent = true })
-
+vim.keymap.set({ "n" }, "<Leader>ff", "<Cmd>Telescope find_files<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n" }, "<Leader>fg", "<Cmd>Telescope grep_string<CR>", { noremap = true, silent = true })
 
 vim.keymap.set({ "n" }, "<Leader>tf", "<Cmd>terminal<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "t" }, "jj", "<C-\\><C-n>", { noremap = true, silent = true })
-
-
-
-
-
 
 -- Normal --
 -- Better window navigation
@@ -67,7 +63,6 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -93,13 +88,10 @@ keymap("x", "K", ":m '<-2<CR>gv=gv", opts)
 keymap("x", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
-
-
 -- Terminal --
 -- Better terminal navigation
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-
 --------------------------------------------------------------------------LINE-----------------------------------------------------------------------
