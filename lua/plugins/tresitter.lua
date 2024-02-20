@@ -11,7 +11,6 @@ return {
 					"python",
 					"lua",
 					"vim",
-					"javascript",
 					"html",
 					"css",
 					"comment",
@@ -26,3 +25,4 @@ return {
 	},
 
 }
+

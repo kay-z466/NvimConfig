@@ -7,19 +7,19 @@ return {
 		end,
 	},
 	{
-     "ellisonleao/gruvbox.nvim",
-    },
-{
-  "folke/tokyonight.nvim",
-  lazy = false,
-  priority = 1000,
-  opts = {},
-},
-{
-"catppuccin/nvim",
-     config = function()
-vim.cmd("colorscheme catppuccin-frappe")  
-end
-},
+		"ellisonleao/gruvbox.nvim",
+	},
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+	{
+		"catppuccin/nvim",
+		config = function()
+			vim.cmd("colorscheme catppuccin-frappe")
+		end
+	},
 
 }
