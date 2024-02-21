@@ -1,6 +1,6 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent =true }
+local term_opts = { silent = true }
 
 -- Shorten function name
 local keymap = vim.keymap.set
@@ -42,7 +42,7 @@ vim.api.nvim_set_keymap('n', '<leader>d[', '<cmd>lua vim.diagnostic.goto_prev()<
 vim.api.nvim_set_keymap('n', '<leader>d]', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>dt', '<cmd>Telescope diagnostics<CR>', { noremap = true, silent = true })
 
--- map leader+y to copy to system clipboard in normal and visual mode
+-- Map leader+y to copy to system clipboard in normal and visual mode
 vim.keymap.set({ "n", "v" }, "<Leader>y", '"+y', { noremap = true, silent = true })
 
 
