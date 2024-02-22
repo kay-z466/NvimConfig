@@ -49,7 +49,7 @@ return {
 					if vim.api.nvim_get_mode().mode == "c" then
 						return true
 
-										elseif buftype == "prompt" then return false 
+										elseif buftype == "prompt" then return false  --Turn off cmp in Telescope Buffer
 					else
 						return not context.in_treesitter_capture("comment")
 						    and not context.in_syntax_group("Comment")
