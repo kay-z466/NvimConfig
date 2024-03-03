@@ -1,6 +1,5 @@
-
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
--- vim.keymap.set("n", "[d", vim.diagnostic.goto_previous)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_previous)
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
