@@ -42,17 +42,17 @@ return {
 				}),
 				enabled = function()
 					-- disable completion in comments
-					 local context = require("cmp.config.context")
+					local context = require("cmp.config.context")
 
-				     local buftype = vim.api.nvim_buf_get_option(0, "buftype")
+					local buftype = vim.api.nvim_buf_get_option(0, "buftype")
 					-- keep command mode completion enabled
 					if vim.api.nvim_get_mode().mode == "c" then
 						return true
-
-							elseif buftype == "prompt" then return false  --Turn off cmp in Telescope Buffer
+					elseif buftype == "prompt" then
+						return false --Turn off cmp in Telescope Buffer
 					else
 						return not context.in_treesitter_capture("comment")
-						    and not context.in_syntax_group("Comment")
+							and not context.in_syntax_group("Comment")
 					end
 				end,
 				formatting = {

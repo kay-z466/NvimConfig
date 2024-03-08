@@ -1,6 +1,3 @@
--- init.lua is the where our configurations live[equivalent to init.vim]
--- We can put all our settings in this file but, instead we have opted for a easier
--- managed modular config file system
 ------------------------------------------------------------------------------------------------------------
 require("config.options")         -- configuration for settings options
 require("config.keymaps")         -- configuration for setting keymap
