@@ -14,4 +14,4 @@ vim.wo.wrap = false                                                     -- Set n
 vim.wo.linebreak = false                                                -- Set no linebreak
 vim.wo.list = false                                                     -- Set no list >
 vim.opt.tabstop = 4                                                     -- Tab set to 4 instead of 8
-vim.o.background = "dark"                                               -- Or "light" for light mode
+vim.opt.background = "dark"                                               -- Or "light" for light mode

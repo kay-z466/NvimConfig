@@ -27,6 +27,7 @@ vim.keymap.set("n", "<Leader>t[", "<Cmd>tabprevious<CR>", { noremap = true, sile
 vim.keymap.set("n", "<Leader>t]", "<Cmd>tabnext<CR>", { noremap = true, silent = true })             --keybindings for tabs
 vim.keymap.set("n", "<Leader>tn", "<Cmd>tabnew<CR>", { noremap = true, silent = true })              --keybindings for tabs
 vim.keymap.set("n", "<Leader>nh", "<Cmd>noh<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<ESC>", "<Cmd>noh<CR>", { noremap = true, silent = true })
 ----------------------------------------------------------------------------------------------------------------------------
 -- LSP KEYBINDINGS
 vim.keymap.set("n", "<Leader>cf", "<Cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true }) --format code via lsp
@@ -44,6 +45,7 @@ vim.keymap.set({ "n" }, "<Leader>bb", "<Cmd>Telescope buffers<CR>", { noremap = 
 vim.keymap.set({ "n" }, "<Leader>fo", "<Cmd>Telescope oldfiles<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<Leader>ff", "<Cmd>Telescope find_files<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<Leader>fg", "<Cmd>Telescope grep_string<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n" }, "<Leader>ht", "<Cmd>Telescope colorscheme<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<Leader>tf", "<Cmd>terminal<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "t" }, "jj", "<C-\\><C-n>", { noremap = true, silent = true })
 -- Normal --
