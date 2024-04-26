@@ -6,18 +6,18 @@ return {
 			vim.notify = require("notify")
 		end,
 	},
-	{
-		-- "ellisonleao/gruvbox.nvim",
-		--config = function()
-		--vim.cmd("colorscheme gruvbox")
-		--end
-	},
-	{
-		-- "catppuccin/nvim",
-		-- config = function()
-		-- 	vim.cmd("colorscheme catppuccin-frappe")
-		-- end
-	},
+	-- {
+	-- 	"ellisonleao/gruvbox.nvim",
+	-- 	config = function()
+	-- 		vim.cmd("colorscheme gruvbox")
+	-- 	end
+	-- },
+	-- {
+	-- 	"catppuccin/nvim",
+	-- 	config = function()
+	-- 		vim.cmd("colorscheme catppuccin-frappe")
+	-- 	end
+	-- },
 	{
 		'navarasu/onedark.nvim',
 		config = function()
