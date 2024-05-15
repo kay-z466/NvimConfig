@@ -1,4 +1,3 @@
-
 -- install lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -17,12 +16,11 @@ vim.opt.rtp:prepend(lazypath)
 --require("lazy").setup("plugins") --loads all .lua files from plugins folder
 
 require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp" } }, {
-  checker = {
-    enabled = true,
-    notify = false,
-  },
-  change_detection = {
-    notify = false,
-  },
+	checker = {
+		enabled = true,
+		notify = false,
+	},
+	change_detection = {
+		notify = false,
+	},
 })
-
