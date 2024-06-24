@@ -6,3 +6,4 @@ require("config.configsnippets")  -- configuration for configuring snippets via 
 require("config.autocmd")         -- configuration for setting auto commands
 require("config.customfunctions") -- configuration for setting custom lua functions
 --------------------------------------------------------------------------------------------------------------
+
