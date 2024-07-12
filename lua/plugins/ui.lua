@@ -1,11 +1,11 @@
 return {
-	{
-		"rcarriga/nvim-notify",
-		opts = {},
-		config = function()
-			vim.notify = require("notify")
-		end,
-	},
+	-- {
+	-- 	"rcarriga/nvim-notify",
+	-- 	opts = {},
+	-- 	config = function()
+	-- 		vim.notify = require("notify")
+	-- 	end,
+	-- },
 	-- {
 	-- 	"ellisonleao/gruvbox.nvim",
 	-- 	config = function()
