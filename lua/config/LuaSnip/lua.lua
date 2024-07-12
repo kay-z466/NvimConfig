@@ -25,7 +25,19 @@ local types = require("luasnip.util.types")
 local parse = require("luasnip.util.parser").parse_snippet
 local ms = ls.multi_snippet
 local k = require("luasnip.nodes.key_indexer").new_key
---
--- -- Place this in ${HOME}/.config/nvim/LuaSnip/all.lua
--- return {
--- }
+
+-- Place this in ${HOME}/.config/nvim/LuaSnip/all.lua
+return {
+	s(
+		"import",
+		fmt('local {} require("{}")', {
+			f(function(values)
+				local value = values[1][1]
+				local path = vim.split(value, '%.')
+				return path[#path]
+			end, { 1 }),
+			i(1)
+		})
+	),
+
+}

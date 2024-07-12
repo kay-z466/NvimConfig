@@ -31,17 +31,8 @@ local k = require("luasnip.nodes.key_indexer").new_key
 
 -- Place this in ${HOME}/.config/nvim/LuaSnip/all.lua
 return {
-	-- A snippet that expands the trigger "hi" into the string "Hello, world!".
 	ls.snippet(
 		{ trig = "shbang" },
 		{ t("#!/bin/bash") }
 	),
-
-	-- To return multiple snippets, use one `return` statement per snippet file
-	-- and return a table of Lua snippets.
-	require("luasnip").snippet(
-		{ trig = "foo" },
-		{ t("Another snippet.") }
-	),
 }
---
