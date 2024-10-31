@@ -61,6 +61,10 @@ return {
 
 				opts.desc = "Show documentation for what is under cursor"
 				keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+				-- auto command to close hover window
+				vim.api.nvim_set_keymap('n', 'K',
+					'<cmd>lua vim.lsp.buf.hover()<CR><cmd>sleep 300m<CR><cmd>close<CR>',
+					{ noremap = true, silent = true })
 
 				opts.desc = "Restart LSP"
 				keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary

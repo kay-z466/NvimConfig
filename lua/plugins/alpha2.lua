@@ -10,7 +10,6 @@ return {
       /~~~~~~\
      /'    -O- ~~~~\
     /'dHHb      ~~~~\
-   /'dHHHA     :
   /' VHHHHaadHHb:
  /'   `VHHHHHHHHb:
 /'      `VHHHHHHH:

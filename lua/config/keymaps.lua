@@ -1,14 +1,13 @@
 local opts = { noremap = true, silent = true }
-
+--------------------------------------------------------------------------LINE-----------------------------------------------------------------------
 local term_opts = { silent = true }
-
 -- Shorten function name
 local keymap = vim.keymap.set
-----------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------LINE-----------------------------------------------------------------------
 -- SYSTEM KEYBINDINGS
 vim.keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader><Leader>", ":", { noremap = true, silent = true })
-----------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------LINE-----------------------------------------------------------------------
 vim.g.mapleader = " "
 vim.keymap.set("n", "<Leader>ww", ":write<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>wv", "<Cmd>vsplit<CR>", { noremap = true, silent = true })
@@ -17,12 +16,12 @@ vim.keymap.set("n", "<Leader>wq", "<Cmd>wq<CR>", { noremap = true, silent = true
 vim.keymap.set("n", "<Leader>qq", "<Cmd>q!<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>bd", "<Cmd>bd!<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>bq", "<Cmd>bd<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<Leader>gg", "gg", { noremap = true, silent = true })                           -- move to begginig of file
-vim.keymap.set("n", "<Leader>gb", "G", { noremap = true, silent = true })                            -- move to end of file
-vim.keymap.set("n", "<Leader>gh", "$", { noremap = true, silent = true })                            -- move to end of line
-vim.keymap.set("n", "<Leader>gf", "_", { noremap = true, silent = true })                            -- move to end of file
-vim.keymap.set("n", "<Leader>fn", " :ene <BAR> startinsert <CR>", { noremap = true, silent = true }) -- Creates new file in insert mode
-vim.keymap.set("n", "<Leader>cd", " :cd %:p:h <CR>", { noremap = true, silent = true })              -- changes Current working directory to the directory of the file
+vim.keymap.set("n", "<Leader>gg", "gg", { noremap = true, silent = true })                           --move to begginig of file
+vim.keymap.set("n", "<Leader>gb", "G", { noremap = true, silent = true })                            --move to end of file
+vim.keymap.set("n", "<Leader>gh", "$", { noremap = true, silent = true })                            --move to end of line
+vim.keymap.set("n", "<Leader>gf", "_", { noremap = true, silent = true })                            --move to end of file
+vim.keymap.set("n", "<Leader>fn", " :ene <BAR> startinsert <CR>", { noremap = true, silent = true }) --creates new file in insert mode
+vim.keymap.set("n", "<Leader>cd", " :cd %:p:h <CR>", { noremap = true, silent = true })              --changes Current working directory to the directory of the file
 vim.keymap.set("n", "<Leader>t[", "<Cmd>tabprevious<CR>", { noremap = true, silent = true })         --keybindings for tabs
 vim.keymap.set("n", "<Leader>t]", "<Cmd>tabnext<CR>", { noremap = true, silent = true })             --keybindings for tabs
 vim.keymap.set("n", "<Leader>tn", "<Cmd>tabnew<CR>", { noremap = true, silent = true })              --keybindings for tabs
@@ -31,6 +30,7 @@ vim.keymap.set("n", "<Leader>bn", "<Cmd>bnext<CR>", { noremap = true, silent = t
 vim.keymap.set("n", "<Leader>b[", "<Cmd>bprevious<CR>", { noremap = true, silent = true })           --keybindings for buffer
 vim.keymap.set("n", "<Leader>bv", "<Cmd>bprevious<CR>", { noremap = true, silent = true })           --keybindings for buffer
 vim.keymap.set("n", "<Esc>", "<Cmd>noh<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>nn", "<Cmd>noh<CR>", { noremap = true, silent = true })
 ----------------------------------------------------------------------------------------------------------------------------
 -- LSP KEYBINDINGS
 vim.keymap.set("n", "<Leader>cf", "<Cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true }) --format code via lsp
