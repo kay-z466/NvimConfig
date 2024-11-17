@@ -14,6 +14,7 @@ vim.wo.wrap = false                                                     -- Set n
 vim.wo.linebreak = false                                                -- Set no linebreak
 vim.wo.list = false                                                     -- Set no list >
 vim.opt.tabstop = 4                                                     -- Tab set to 4 instead of 8
+vim.opt.shiftwidth = 4                                                  -- Tab set to 4 instead of 8
 vim.opt.background = "dark"                                             -- Or "light" for light mode
 vim.opt.foldlevelstart = 99
 vim.opt.foldmethod = "expr"
