@@ -32,7 +32,7 @@ local k = require("luasnip.nodes.key_indexer").new_key
 -- Place this in ${HOME}/.config/nvim/LuaSnip/all.lua
 return {
 	ls.snippet(
-		{ trig = "shbang" },
+		{ trig = "!" },
 		{ t("#!/bin/bash") }
 	),
 }

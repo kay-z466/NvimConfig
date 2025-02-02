@@ -12,11 +12,14 @@ return {
 					"comment",
 					"vimdoc",
 				},
-				highlight = { enable = true },
+				highlight = {
+					enable = true,
+					disable = { "latex" }
+				},
 				indent = { enable = true },
 				autotag = { enable = true },
 			})
 		end,
-	},
+	}
 
 }

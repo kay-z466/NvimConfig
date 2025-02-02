@@ -82,4 +82,10 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+vim.keymap.set("n", "<leader>ko", function()
+	local file_path = vim.api.nvim_buf_get_name(0)               -- Get the current file's full path
+	vim.fn.system("kate " .. vim.fn.shellescape(file_path) .. " &") -- Open the file in Kate
+end, { desc = "Open current file in Kate", silent = true })
+
 --------------------------------------------------------------------------LINE-----------------------------------------------------------------------

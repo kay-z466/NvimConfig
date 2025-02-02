@@ -35,10 +35,11 @@ return {
 					["<S-Tab>"] = cmp.mapping.select_prev_item(),
 				}),
 				sources = cmp.config.sources({
+					{ name = "path" },
 					{ name = "luasnip" },
 					{ name = "nvim_lsp" },
 					{ name = "nvim_lua" },
-					{ name = "buffer" },
+					{ name = "buffer" }
 				}),
 				enabled = function()
 					-- disable completion in comments
@@ -55,20 +56,20 @@ return {
 							and not context.in_syntax_group("Comment")
 					end
 				end,
-				formatting = {
-					format = lspkind.cmp_format({
-						mode = "symbol_text",
-						maxwidth = 50,
-						ellipsis_char = "...",
-						menu = {
-							buffer = "[Buffer]",
-							nvim_lsp = "[LSP]",
-							nvim_lua = "[Lua]",
-							luasnip = "[LuaSnip]",
-							latex_symbols = "[Latex]",
-						},
-					}),
-				},
+				-- formatting = {
+				-- 	format = lspkind.cmp_format({
+				-- 		mode = "symbol_text",
+				-- 		maxwidth = 50,
+				-- 		ellipsis_char = "...",
+				-- 		menu = {
+				-- 			buffer = "[Buffer]",
+				-- 			nvim_lsp = "[LSP]",
+				-- 			nvim_lua = "[Lua]",
+				-- 			luasnip = "[LuaSnip]",
+				-- 			latex_symbols = "[Latex]",
+				-- 		},
+				-- 	}),
+				-- },
 			})
 
 			cmp.setup.cmdline({ "/", "?" }, {
