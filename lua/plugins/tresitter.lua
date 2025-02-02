@@ -18,6 +18,18 @@ return {
 				},
 				indent = { enable = true },
 				autotag = { enable = true },
+
+				incremental_selection = {
+					enable = true,
+					keymaps = {
+						init_selection = "gnn", -- Start incremental selection
+						node_incremental = "grn", -- Expand selection
+						scope_incremental = "grc", -- Expand to scope
+						node_decremental = "grm", -- Shrink selection
+					},
+				},
+
+
 			})
 		end,
 	}
