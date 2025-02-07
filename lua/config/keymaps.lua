@@ -31,6 +31,8 @@ vim.keymap.set("n", "<Leader>b[", "<Cmd>bprevious<CR>", { noremap = true, silent
 vim.keymap.set("n", "<Leader>bv", "<Cmd>bprevious<CR>", { noremap = true, silent = true })           --keybindings for buffer
 vim.keymap.set("n", "<Esc>", "<Cmd>noh<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>nn", "<Cmd>noh<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n" }, "<Leader>tf", "<Cmd>terminal<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "t" }, "jj", "<C-\\><C-n>", { noremap = true, silent = true })
 ----------------------------------------------------------------------------------------------------------------------------
 -- LSP KEYBINDINGS
 vim.keymap.set("n", "<Leader>cf", "<Cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true }) --format code via lsp
@@ -50,8 +52,7 @@ vim.keymap.set({ "n" }, "<Leader>ff", "<Cmd>Telescope find_files<CR>", { noremap
 vim.keymap.set({ "n" }, "<Leader>fw", "<Cmd>Telescope grep_string<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<Leader>fg", "<Cmd>Telescope live_grep<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<Leader>ht", "<Cmd>Telescope colorscheme<CR>", { noremap = true, silent = true })
-vim.keymap.set({ "n" }, "<Leader>tf", "<Cmd>terminal<CR>", { noremap = true, silent = true })
-vim.keymap.set({ "t" }, "jj", "<C-\\><C-n>", { noremap = true, silent = true })
+vim.keymap.set({ "n" }, "<Leader>cp", "<Cmd>ColorPickOklch<CR>", { noremap = true, silent = true })
 -- Normal --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -84,7 +85,7 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 vim.keymap.set("n", "<leader>ko", function()
-	local file_path = vim.api.nvim_buf_get_name(0)               -- Get the current file's full path
+	local file_path = vim.api.nvim_buf_get_name(0)                 -- Get the current file's full path
 	vim.fn.system("kate " .. vim.fn.shellescape(file_path) .. " &") -- Open the file in Kate
 end, { desc = "Open current file in Kate", silent = true })
 
