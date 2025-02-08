@@ -52,7 +52,9 @@ vim.keymap.set({ "n" }, "<Leader>ff", "<Cmd>Telescope find_files<CR>", { noremap
 vim.keymap.set({ "n" }, "<Leader>fw", "<Cmd>Telescope grep_string<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<Leader>fg", "<Cmd>Telescope live_grep<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<Leader>ht", "<Cmd>Telescope colorscheme<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n" }, "<Leader>fp", "<Cmd>Telescope git_files<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<Leader>cp", "<Cmd>ColorPickOklch<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n" }, "<Leader>cd", "<Cmd> Telescope zoxide list<CR>", { noremap = true, silent = true })
 -- Normal --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)

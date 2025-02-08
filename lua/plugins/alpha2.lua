@@ -30,7 +30,7 @@ HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
 			dashboard.button("n", " " .. " New File", ":ene <BAR> startinsert <CR>"),
 			dashboard.button("o", " " .. " Older Files", ":Telescope oldfiles <CR>"),
 			dashboard.button("g", " " .. " Find Text", ":Telescope live_grep <CR>"),
-			dashboard.button("c", " " .. " Config", ":cd ~/.config/nvim <CR>"),
+			dashboard.button("c", " " .. " Config", ":Telescope find_files cwd=~/.config/nvim<CR>"),
 			dashboard.button("l", "󰒲 " .. " Lazy", ":Lazy<CR>"),
 			dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 		}
@@ -64,7 +64,7 @@ HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
 				local stats = require("lazy").stats()
 				local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
 				dashboard.section.footer.val = " Neovim loaded " ..
-				    stats.count .. " plugins in " .. ms .. "ms"
+						stats.count .. " plugins in " .. ms .. "ms"
 				pcall(vim.cmd.AlphaRedraw)
 			end,
 		})
