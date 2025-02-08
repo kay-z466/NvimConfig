@@ -54,7 +54,7 @@ vim.keymap.set({ "n" }, "<Leader>fg", "<Cmd>Telescope live_grep<CR>", { noremap 
 vim.keymap.set({ "n" }, "<Leader>ht", "<Cmd>Telescope colorscheme<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<Leader>fp", "<Cmd>Telescope git_files<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<Leader>cp", "<Cmd>ColorPickOklch<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<2-LeftMouse>', ':lua require("oklch-color-picker").pick_under_cursor()<CR>',
+vim.api.nvim_set_keymap('n', '<2-LeftMouse>', ':lua pcall(require("oklch-color-picker").pick_under_cursor)<CR>',
 	{ noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<Leader>cd", "<Cmd>Telescope zoxide list<CR>", { noremap = true, silent = true })
 -- Normal --
