@@ -16,26 +16,26 @@ vim.keymap.set("n", "<Leader>wq", "<Cmd>wq<CR>", { noremap = true, silent = true
 vim.keymap.set("n", "<Leader>qq", "<Cmd>q!<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>bd", "<Cmd>bd!<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>bq", "<Cmd>bd<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<Leader>gg", "gg", { noremap = true, silent = true })                           --move to begginig of file
-vim.keymap.set("n", "<Leader>gb", "G", { noremap = true, silent = true })                            --move to end of file
-vim.keymap.set("n", "<Leader>gh", "$", { noremap = true, silent = true })                            --move to end of line
-vim.keymap.set("n", "<Leader>gf", "_", { noremap = true, silent = true })                            --move to end of file
-vim.keymap.set("n", "<Leader>fn", " :ene <BAR> startinsert <CR>", { noremap = true, silent = true }) --creates new file in insert mode
-vim.keymap.set("n", "<Leader>cd", " :cd %:p:h <CR>", { noremap = true, silent = true })              --changes Current working directory to the directory of the file
-vim.keymap.set("n", "<Leader>t[", "<Cmd>tabprevious<CR>", { noremap = true, silent = true })         --keybindings for tabs
-vim.keymap.set("n", "<Leader>t]", "<Cmd>tabnext<CR>", { noremap = true, silent = true })             --keybindings for tabs
-vim.keymap.set("n", "<Leader>tn", "<Cmd>tabnew<CR>", { noremap = true, silent = true })              --keybindings for tabs
-vim.keymap.set("n", "<Leader>b]", "<Cmd>bnext<CR>", { noremap = true, silent = true })               --keybindings for buffer
-vim.keymap.set("n", "<Leader>bn", "<Cmd>bnext<CR>", { noremap = true, silent = true })               --keybindings for buffer
-vim.keymap.set("n", "<Leader>b[", "<Cmd>bprevious<CR>", { noremap = true, silent = true })           --keybindings for buffer
-vim.keymap.set("n", "<Leader>bv", "<Cmd>bprevious<CR>", { noremap = true, silent = true })           --keybindings for buffer
+vim.keymap.set("n", "<Leader>gg", "gg", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>gb", "G", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>gh", "$", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>gf", "_", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>fn", " :ene <BAR> startinsert <CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>cd", " :cd %:p:h <CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>t[", "<Cmd>tabprevious<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>t]", "<Cmd>tabnext<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>tn", "<Cmd>tabnew<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>b]", "<Cmd>bnext<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>bn", "<Cmd>bnext<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>b[", "<Cmd>bprevious<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>bv", "<Cmd>bprevious<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Esc>", "<Cmd>noh<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>nn", "<Cmd>noh<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<Leader>tf", "<Cmd>terminal<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "t" }, "jj", "<C-\\><C-n>", { noremap = true, silent = true })
 ----------------------------------------------------------------------------------------------------------------------------
 -- LSP KEYBINDINGS
-vim.keymap.set("n", "<Leader>cf", "<Cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true }) --format code via lsp
+vim.keymap.set("n", "<Leader>cf", "<Cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>do", "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>d[", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>d]", "<cmd>lua vim.diagnostic.goto_next()<CR>", { noremap = true, silent = true })
@@ -52,7 +52,11 @@ vim.keymap.set({ "n" }, "<Leader>ff", "<Cmd>Telescope find_files<CR>", { noremap
 vim.keymap.set({ "n" }, "<Leader>fw", "<Cmd>Telescope grep_string<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<Leader>fg", "<Cmd>Telescope live_grep<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<Leader>ht", "<Cmd>Telescope colorscheme<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n" }, "<Leader>fp", "<Cmd>Telescope git_files<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<Leader>cp", "<Cmd>ColorPickOklch<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<2-LeftMouse>', ':lua pcall(require("oklch-color-picker").pick_under_cursor)<CR>',
+	{ noremap = true, silent = true })
+vim.keymap.set({ "n" }, "<Leader>cd", "<Cmd>Telescope zoxide list<CR>", { noremap = true, silent = true })
 -- Normal --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
