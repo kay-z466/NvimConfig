@@ -28,9 +28,10 @@ vim.keymap.set("n", "<Leader>b]", "<Cmd>bnext<CR>", { noremap = true, silent = t
 vim.keymap.set("n", "<Leader>bn", "<Cmd>bnext<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>b[", "<Cmd>bprevious<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>bv", "<Cmd>bprevious<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>br", "<Cmd>b#<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Esc>", "<Cmd>noh<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>nn", "<Cmd>noh<CR>", { noremap = true, silent = true })
-vim.keymap.set({ "n" }, "<Leader>tf", "<Cmd>terminal<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n" }, "<Leader>tf", "<Cmd>! footclient &<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "t" }, "jj", "<C-\\><C-n>", { noremap = true, silent = true })
 ----------------------------------------------------------------------------------------------------------------------------
 -- LSP KEYBINDINGS
