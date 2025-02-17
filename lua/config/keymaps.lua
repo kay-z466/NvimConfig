@@ -25,7 +25,7 @@ vim.keymap.set("n", "<Leader>t[", "<Cmd>tabprevious<CR>", { noremap = true, sile
 vim.keymap.set("n", "<Leader>t]", "<Cmd>tabnext<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>tn", "<Cmd>tabnew<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>b]", "<Cmd>bnext<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<Leader>bn", "<Cmd>bnext<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>bn", "< Cmd>bnext<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>b[", "<Cmd>bprevious<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>bv", "<Cmd>bprevious<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>br", "<Cmd>b#<CR>", { noremap = true, silent = true })
@@ -109,6 +109,12 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.keymap.set("n", "<leader>ko", function()
-	local file_path = vim.api.nvim_buf_get_name(0)                 -- Get the current file's full path
+	local file_path = vim.api.nvim_buf_get_name(0)               -- Get the current file's full path
 	vim.fn.system("kate " .. vim.fn.shellescape(file_path) .. " &") -- Open the file in Kate
 end, { desc = "Open current file in Kate", silent = true })
+
+
+
+--------------------------------------------------------------------------Custom Functions-----------------------------------------------------------------------
+vim.keymap.set("n", "<Leader>vf", "<Cmd>VifmOpen<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>lg", "<Cmd>LazyGitOpen<CR>", { noremap = true, silent = true })

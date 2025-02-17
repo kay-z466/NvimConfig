@@ -1,4 +1,4 @@
--- test function
+-- Test function
 function Foo()
 	print("Test function Runs!")
 end
@@ -8,7 +8,7 @@ end
 local function open_vifm()
 	local tmpfile = "/tmp/vifm_selected"
 
-	-- Command to open Terminal and run vifm
+	-- Command to open default terminal($TERM) and run vifm
 	local terminal_cmd = "$TERM -e vifm --choose-files " .. tmpfile
 
 	-- Run the command
@@ -34,3 +34,22 @@ local function open_lazygit()
 end
 
 vim.api.nvim_create_user_command("LazyGitOpen", open_lazygit, {}) -- Create a :LazyGitOpen command
+
+
+local function open_scratch()
+	vim.cmd("enew")
+	vim.bo.buftype = "nofile"
+	vim.bo.bufhidden = "hide"
+	vim.bo.swapfile = false
+end
+
+vim.api.nvim_create_user_command("Scratch", open_scratch, { desc = "Open a scratch buffer" })
+-------------------------------------------------------------------------------------------------------
+-- Open Shada
+
+function Shada()
+	local shada_path = vim.fn.stdpath("state") .. "/shada/main.shada"
+	vim.cmd("edit " .. shada_path)
+end
+
+vim.api.nvim_create_user_command("Shada", Shada, {})
