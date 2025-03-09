@@ -44,8 +44,8 @@ local function open_scratch()
 end
 
 vim.api.nvim_create_user_command("Scratch", open_scratch, { desc = "Open a scratch buffer" })
--------------------------------------------------------------------------------------------------------
 -- Open Shada
+-------------------------------------------------------------------------------------------------------
 
 function Shada()
 	local shada_path = vim.fn.stdpath("state") .. "/shada/main.shada"

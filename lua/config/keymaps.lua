@@ -4,10 +4,10 @@ local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.keymap.set
 -- SYSTEM KEYBINDINGS
+vim.g.mapleader = " "
 vim.keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader><Leader>", ":", { noremap = true, silent = true })
 --------------------------------------------------------------------------Basic-----------------------------------------------------------------------
-vim.g.mapleader = " "
 vim.keymap.set("n", "<Leader>ww", ":write<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>wv", "<Cmd>vsplit<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>wh", "<Cmd>split<CR>", { noremap = true, silent = true })
@@ -25,12 +25,14 @@ vim.keymap.set("n", "<Leader>t[", "<Cmd>tabprevious<CR>", { noremap = true, sile
 vim.keymap.set("n", "<Leader>t]", "<Cmd>tabnext<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>tn", "<Cmd>tabnew<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>b]", "<Cmd>bnext<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<Leader>bn", "< Cmd>bnext<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>bn", "<Cmd>bnext<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>b[", "<Cmd>bprevious<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>bv", "<Cmd>bprevious<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>br", "<Cmd>b#<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Esc>", "<Cmd>noh<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>nn", "<Cmd>noh<CR>", { noremap = true, silent = true })
+vim.keymap.set("i", "<A-Space>", "<BS>", { noremap = true, silent = true })
+
 vim.keymap.set({ "n" }, "<Leader>tf", "<Cmd>! footclient &<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "t" }, "jj", "<C-\\><C-n>", { noremap = true, silent = true })
 ----------------------------------------------------------------------------------------------------------------------------
@@ -109,7 +111,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.keymap.set("n", "<leader>ko", function()
-	local file_path = vim.api.nvim_buf_get_name(0)               -- Get the current file's full path
+	local file_path = vim.api.nvim_buf_get_name(0)                 -- Get the current file's full path
 	vim.fn.system("kate " .. vim.fn.shellescape(file_path) .. " &") -- Open the file in Kate
 end, { desc = "Open current file in Kate", silent = true })
 

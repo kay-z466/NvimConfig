@@ -28,11 +28,11 @@ return {
 					documentation = cmp.config.window.bordered(),
 				},
 				mapping = cmp.mapping.preset.insert({
-					["<C-b>"] = cmp.mapping.scroll_docs(-4),
-					["<C-f>"] = cmp.mapping.scroll_docs(4),
+					-- ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+					-- ["<C-f>"] = cmp.mapping.scroll_docs(4),
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
-					["<Tab>"] = cmp.mapping.select_next_item(),
-					["<S-Tab>"] = cmp.mapping.select_prev_item(),
+					["<C-f>"] = cmp.mapping.select_next_item(),
+					["<C-b>"] = cmp.mapping.select_prev_item(),
 				}),
 				sources = cmp.config.sources({
 					{ name = "path" },
@@ -53,7 +53,7 @@ return {
 						return false --Turn off cmp in Telescope Buffer
 					else
 						return not context.in_treesitter_capture("comment")
-							and not context.in_syntax_group("Comment")
+								and not context.in_syntax_group("Comment")
 					end
 				end,
 				-- formatting = {
