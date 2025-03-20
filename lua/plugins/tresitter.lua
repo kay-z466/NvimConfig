@@ -22,10 +22,10 @@ return {
 				incremental_selection = {
 					enable = true,
 					keymaps = {
-						init_selection = "gnn", -- Start incremental selection
-						node_incremental = "grn", -- Expand selection
-						scope_incremental = "grc", -- Expand to scope
-						node_decremental = "grm", -- Shrink selection
+						init_selection = "gnm", -- Start incremental selection
+						node_incremental = "gnn", -- Expand selection
+						scope_incremental = "gnr", -- Expand to scope
+						node_decremental = "gnp", -- Shrink selection
 					},
 				},
 

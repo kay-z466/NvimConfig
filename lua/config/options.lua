@@ -9,6 +9,7 @@ vim.opt.cursorline = true     -- Enable highlighting of the current line
 vim.opt.autochdir = true      -- Automatically change directory
 vim.opt.ignorecase = true     -- Ignore case
 vim.opt.smartcase = true      -- Don't ignore case with capitals
+vim.opt.autoread = true       -- Auto reload changes from disk
 vim.wo.wrap = false           -- Set no wrap
 vim.wo.linebreak = false      -- Set no linebreak
 vim.wo.list = false           -- Set no list >

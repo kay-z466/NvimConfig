@@ -9,13 +9,7 @@ return {
 				char = "│",
 				tab_char = "│",
 			},
-			scope = { enabled = false },
 		},
-
-		config = function()
-			require("ibl").setup({ scope = { enabled = false } })
-		end
-
 	},
 	{
 		"echasnovski/mini.indentscope",

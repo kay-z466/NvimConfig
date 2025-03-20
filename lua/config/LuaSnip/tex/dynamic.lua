@@ -55,6 +55,17 @@ end
 return {
 
 
+	-- snippet for visual bold
+	s({ trig = "tbb", dscr = "Expands 'tii' into LaTeX's textit{} command." },
+		fmta("\\textbf{<>}",
+			{
+				d(1, get_visual),
+			}
+		)
+	),
+
+
+	-- snippet for visual textit
 	s({ trig = "tii", dscr = "Expands 'tii' into LaTeX's textit{} command." },
 		fmta("\\textit{<>}",
 			{
@@ -63,24 +74,37 @@ return {
 		)
 	),
 
+	-- snippet fo text mode inside math
+	s(
+		{
+			trig = "txt",
+			snippetType = "autosnippet",
+			condition = in_mathzone
+		},
+		fmta(
+			"\\text{<>}",
+			{
+				i(1)
+			})
+	),
 
+	-- snippet for fraction
 	s({
-			trig = '(%S+)by', -- Match anything before "by"
-			regTrig = true, -- Enable regex trigger
-			wordTrig = false, -- Allow part-word expansion
+			trig = '(%S+)by',    -- Match anything before "by"
+			regTrig = true,      -- Enable regex trigger
+			wordTrig = false,    -- Allow part-word expansion
 			snippetType = "autosnippet",
 			condition = in_mathzone -- Restrict to math mode
 		},
 		fmta(
-			"\\frac{<>}{<>}",                         -- LaTeX fraction format
+			"\\frac{<>}{<>}",                               -- LaTeX fraction format
 			{
 				f(function(_, snip) return snip.captures[1] end), -- Capture everything before "by"
-				i(1)                                  -- Insert node for the denominator, allowing user input
+				i(1)                                          -- Insert node for the denominator, allowing user input
 			}
 		)),
 
-
-
+	-- snippet for subscript
 	s({
 			trig = '([%a%)%]%}])sub', -- Trigger: A variable or closing bracket followed by "sub"
 			regTrig = true,
@@ -89,15 +113,44 @@ return {
 			condition = in_mathzone
 		},
 		fmta(
-			"<>_{<>}",                                -- Format: Base character with a subscript
+			"<>_{<>}",                                      -- Format: Base character with a subscript
 			{
 				f(function(_, snip) return snip.captures[1] end), -- Capture the base character
-				i(1)                                  -- Insert node inside the subscript for user input
+				i(1)                                          -- Insert node inside the subscript for user input
 			}
 		)
-
 	),
 
+	-- snippet to raise to a power
+	s({
+			trig = '([%a%)%]%}])to', -- Trigger: A variable or closing bracket followed by "to"
+			regTrig = true,
+			wordTrig = false,
+			snippetType = "autosnippet",
+			condition = in_mathzone
+		},
+		fmta(
+			"<>^{<>}",                                      -- Format: Base character with a superscript
+			{
+				f(function(_, snip) return snip.captures[1] end), -- Capture the base character
+				i(1)                                          -- Insert node inside the subscript for user input
+			}
+		)
+	),
+
+
+	s({
+			trig = 'exp', -- Trigger: A variable or closing bracket followed by "to"
+			snippetType = "autosnippet",
+			condition = in_mathzone
+		},
+		fmta(
+			"e^{<>}", -- Format: Base character with a superscript
+			{
+				i(1) -- Insert node inside the subscript for user input
+			}
+		)
+	),
 
 	s({ trig = '([%a%)%]%}])00', regTrig = true, wordTrig = false, snippetType = "autosnippet" },
 		fmta(
@@ -109,6 +162,7 @@ return {
 		)
 	),
 
+	-- snippet for matrix
 	s({
 			trig = "mat(%d+)b(%d+)", -- Match "mat<n>b<m>"
 			regTrig = true,
@@ -118,18 +172,18 @@ return {
 		},
 		{
 			t("\\begin{"), i(1, "bmatrix"), t("}"), -- Cursor starts inside \begin{...}
-			t({ "", "" }),                 -- New line
+			t({ "", "" }),                       -- New line
 			d(2, function(args, snip)
 				local rows = tonumber(snip.captures[1])
 				local cols = tonumber(snip.captures[2])
 
 				local nodes = {}
 
-				for row = 1, rows do                 -- Use `row` instead of `i` to avoid conflict
+				for row = 1, rows do                         -- Use `row` instead of `i` to avoid conflict
 					for col = 1, cols do
 						table.insert(nodes, i((row - 1) * cols + col)) -- Insert input nodes
 						if col < cols then
-							table.insert(nodes, t(" & ")) -- Add '&' between columns
+							table.insert(nodes, t(" & "))          -- Add '&' between columns
 						end
 					end
 					if row < rows then
@@ -144,4 +198,7 @@ return {
 
 
 
+
 }
+
+--TODO: Add snippets for Quantum Calculus and Vectors
