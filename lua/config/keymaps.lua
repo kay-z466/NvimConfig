@@ -32,7 +32,6 @@ vim.keymap.set("n", "<Leader>br", "<Cmd>b#<CR>", { noremap = true, silent = true
 vim.keymap.set("n", "<Esc>", "<Cmd>noh<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>nn", "<Cmd>noh<CR>", { noremap = true, silent = true })
 vim.keymap.set("i", "<A-Space>", "<BS>", { noremap = true, silent = true })
-
 vim.keymap.set({ "n" }, "<Leader>tf", "<Cmd>! footclient &<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "t" }, "jj", "<C-\\><C-n>", { noremap = true, silent = true })
 ----------------------------------------------------------------------------------------------------------------------------
@@ -111,10 +110,9 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.keymap.set("n", "<leader>ko", function()
-	local file_path = vim.api.nvim_buf_get_name(0)               -- Get the current file's full path
+	local file_path = vim.api.nvim_buf_get_name(0)                 -- Get the current file's full path
 	vim.fn.system("kate " .. vim.fn.shellescape(file_path) .. " &") -- Open the file in Kate
 end, { desc = "Open current file in Kate", silent = true })
-
 
 
 --------------------------------------------------------------------------Custom Functions-----------------------------------------------------------------------
