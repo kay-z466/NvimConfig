@@ -5,4 +5,4 @@ require("config.lazy")            -- configuration for configuring package manag
 require("config.configsnippets")  -- configuration for configuring snippets via LuaSnip
 require("config.autocmd")         -- configuration for setting auto commands
 require("config.customfunctions") -- configuration for setting custom lua functions
---------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
