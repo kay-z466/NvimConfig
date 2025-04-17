@@ -1,14 +1,13 @@
+--------------------------------------------------------------------------Definations-----------------------------------------------------------------------
 local opts = { noremap = true, silent = true }
---------------------------------------------------------------------------LINE-----------------------------------------------------------------------
 local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.keymap.set
---------------------------------------------------------------------------LINE-----------------------------------------------------------------------
 -- SYSTEM KEYBINDINGS
+vim.g.mapleader = " "
 vim.keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader><Leader>", ":", { noremap = true, silent = true })
---------------------------------------------------------------------------LINE-----------------------------------------------------------------------
-vim.g.mapleader = " "
+--------------------------------------------------------------------------Basic-----------------------------------------------------------------------
 vim.keymap.set("n", "<Leader>ww", ":write<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>wv", "<Cmd>vsplit<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>wh", "<Cmd>split<CR>", { noremap = true, silent = true })
@@ -29,9 +28,11 @@ vim.keymap.set("n", "<Leader>b]", "<Cmd>bnext<CR>", { noremap = true, silent = t
 vim.keymap.set("n", "<Leader>bn", "<Cmd>bnext<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>b[", "<Cmd>bprevious<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>bv", "<Cmd>bprevious<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>br", "<Cmd>b#<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Esc>", "<Cmd>noh<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>nn", "<Cmd>noh<CR>", { noremap = true, silent = true })
-vim.keymap.set({ "n" }, "<Leader>tf", "<Cmd>terminal<CR>", { noremap = true, silent = true })
+vim.keymap.set("i", "<A-Space>", "<BS>", { noremap = true, silent = true })
+vim.keymap.set({ "n" }, "<Leader>tf", "<Cmd>! footclient &<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "t" }, "jj", "<C-\\><C-n>", { noremap = true, silent = true })
 ----------------------------------------------------------------------------------------------------------------------------
 -- LSP KEYBINDINGS
@@ -54,8 +55,8 @@ vim.keymap.set({ "n" }, "<Leader>fg", "<Cmd>Telescope live_grep<CR>", { noremap 
 vim.keymap.set({ "n" }, "<Leader>ht", "<Cmd>Telescope colorscheme<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<Leader>fp", "<Cmd>Telescope git_files<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<Leader>cp", "<Cmd>ColorPickOklch<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<2-LeftMouse>', ':lua pcall(require("oklch-color-picker").pick_under_cursor)<CR>',
-	{ noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<2-LeftMouse>', ':lua pcall(require("oklch-color-picker").pick_under_cursor)<CR>',
+-- 	{ noremap = true, silent = true })
 vim.keymap.set({ "n" }, "<Leader>cd", "<Cmd>Telescope zoxide list<CR>", { noremap = true, silent = true })
 -- Normal --
 -- Better window navigation
@@ -88,9 +89,32 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+--------------------------------------------------------------------------Advanced-----------------------------------------------------------------------
+
+-- Define the list of filetypes where the color picker should be enabled
+local color_filetypes = {
+	"css", "scss", "sass", "less", "stylus", "html", "javascript", "typescript",
+	"javascriptreact", "typescriptreact", "vue", "toml", "yaml", "json"
+}
+
+-- Create an autocommand group for setting the keymap only in specific filetypes
+vim.api.nvim_create_augroup("ColorPickerKeymap", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+	group = "ColorPickerKeymap",
+	pattern = color_filetypes,
+	callback = function()
+		vim.api.nvim_buf_set_keymap(0, 'n', '<2-LeftMouse>',
+			':lua local ok, _ = pcall(require("oklch-color-picker").pick_under_cursor); if not ok then vim.cmd("echohl None | echo \'\'") end<CR>',
+			{ noremap = true, silent = true })
+	end,
+})
+
 vim.keymap.set("n", "<leader>ko", function()
 	local file_path = vim.api.nvim_buf_get_name(0)                 -- Get the current file's full path
 	vim.fn.system("kate " .. vim.fn.shellescape(file_path) .. " &") -- Open the file in Kate
 end, { desc = "Open current file in Kate", silent = true })
 
---------------------------------------------------------------------------LINE-----------------------------------------------------------------------
+
+--------------------------------------------------------------------------Custom Functions-----------------------------------------------------------------------
+vim.keymap.set("n", "<Leader>vf", "<Cmd>VifmOpen<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>lg", "<Cmd>LazyGitOpen<CR>", { noremap = true, silent = true })
