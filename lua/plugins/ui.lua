@@ -6,118 +6,117 @@ return {
 		end
 	},
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1001, -- Higher priority than other themes
+		"olimorris/onedarkpro.nvim",
 		config = function()
-			require("catppuccin").setup({
-				flavour = "auto",
-				background = {
-					light = "latte",
-					dark = "macchiato",
+			require("onedarkpro").setup({
+				colors = {}, -- Override default colors or create your own
+				highlights = {}, -- Override default highlight groups or create your own
+				styles = {  -- For example, to apply bold and italic, use "bold,italic"
+					types = "NONE", -- Style that is applied to types
+					methods = "NONE", -- Style that is applied to methods
+					numbers = "NONE", -- Style that is applied to numbers
+					strings = "NONE", -- Style that is applied to strings
+					comments = "NONE", -- Style that is applied to comments
+					keywords = "NONE", -- Style that is applied to keywords
+					constants = "NONE", -- Style that is applied to constants
+					functions = "NONE", -- Style that is applied to functions
+					operators = "NONE", -- Style that is applied to operators
+					variables = "NONE", -- Style that is applied to variables
+					parameters = "NONE", -- Style that is applied to parameters
+					conditionals = "NONE", -- Style that is applied to conditionals
+					virtual_text = "NONE", -- Style that is applied to virtual text
 				},
-				transparent_background = false,
-				show_end_of_buffer = false,
-				term_colors = true,
-				dim_inactive = {
-					enabled = true,
-					shade = "dark",
-					percentage = 0.15,
+				filetypes = { -- Override which filetype highlight groups are loaded
+					c = true,
+					comment = true,
+					go = true,
+					html = true,
+					java = true,
+					javascript = true,
+					json = true,
+					lua = true,
+					markdown = true,
+					php = true,
+					python = true,
+					ruby = true,
+					rust = true,
+					scss = true,
+					toml = true,
+					typescript = true,
+					typescriptreact = true,
+					vue = true,
+					xml = true,
+					yaml = true,
 				},
-				no_italic = false,
-				no_bold = false,
-				no_underline = false,
-				styles = {
-					comments = { "italic" },
-					conditionals = { "italic" },
-					loops = {},
-					functions = {},
-					keywords = {},
-					strings = {},
-					variables = {},
-					numbers = {},
-					booleans = {},
-					properties = {},
-					types = {},
-					operators = {},
-				},
-				color_overrides = {},
-				custom_highlights = {},
-				default_integrations = true,
-				integrations = {
-					cmp = true,
+				plugins = { -- Override which plugin highlight groups are loaded
+					aerial = true,
+					barbar = true,
+					blink_cmp = true,
+					codecompanion = true,
+					copilot = true,
+					dashboard = true,
+					flash_nvim = true,
+					gitgraph_nvim = true,
 					gitsigns = true,
-					nvimtree = true,
+					hop = true,
+					indentline = true,
+					leap = true,
+					lsp_saga = true,
+					lsp_semantic_tokens = true,
+					marks = true,
+					mini_diff = true,
+					mini_icons = true,
+					mini_indentscope = true,
+					mini_test = true,
+					neotest = true,
+					neo_tree = true,
+					nvim_cmp = true,
+					nvim_bqf = true,
+					nvim_dap = true,
+					nvim_dap_ui = true,
+					nvim_hlslens = true,
+					nvim_lsp = true,
+					nvim_navic = true,
+					nvim_notify = true,
+					nvim_tree = true,
+					nvim_ts_rainbow = true,
+					op_nvim = true,
+					packer = true,
+					persisted = true,
+					polygot = true,
+					rainbow_delimiters = true,
+					render_markdown = true,
+					startify = true,
+					telescope = true,
+					toggleterm = true,
 					treesitter = true,
-					notify = false,
-					mini = {
-						enabled = true,
-						indentscope_color = "",
-					},
+					trouble = true,
+					vim_ultest = true,
+					which_key = true,
+					vim_dadbod_ui = true,
 				},
+
+				options = {
+					cursorline = false,  -- Use cursorline highlighting?
+					transparency = false, -- Use a transparent background?
+					terminal_colors = true, -- Use the theme's colors for Neovim's :terminal?
+					lualine_transparency = false, -- Center bar transparency?
+					highlight_inactive_windows = false, -- When the window is out of focus, change the normal background?
+				}
 			})
-			vim.cmd("colorscheme catppuccin")
-			vim.api.nvim_set_hl(0, "UfoFoldedEllipsis", { fg = "NONE", bg = "NONE", italic = false })
-			vim.api.nvim_set_hl(0, "UfoFoldedFg", { fg = "NONE", bg = "NONE", italic = false })
-		end,
+			vim.cmd("colorscheme onedark")
+		end
+
 	},
+
 
 	{
-		"navarasu/onedark.nvim",
+		"polirritmico/monokai-nightasty.nvim",
+		lazy = false,
+		priority = 1000,
 		config = function()
-			-- Lua
-			require("onedark").setup({
-				-- Main options --
-				style = "warmer", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-				transparent = false, -- Show/hide background
-				term_colors = true, -- Change terminal color as per the selected theme style
-				ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
-				cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
-
-				-- toggle theme style ---
-				toggle_style_key = "<leader>ts",                                         -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
-				toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" }, -- List of styles to toggle between
-
-				-- Change code style ---
-				-- Options are italic, bold, underline, none
-				-- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
-				code_style = {
-					comments = "italic",
-					keywords = "bold",
-					functions = "none",
-					strings = "none",
-					variables = "none",
-				},
-
-				-- Lualine options --
-				lualine = {
-					transparent = true, -- lualine center bar transparency
-				},
-
-				-- Custom Highlights --
-				colors = {
-				},   -- Override default colors
-				highlights = {}, -- Override highlight groups
-
-				-- Plugins Config --
-				diagnostics = {
-					darker = true, -- darker colors for diagnostic
-					undercurl = true, -- use undercurl instead of underline for diagnostics
-					background = true, -- use background color for virtual text
-				},
-			})
-			-- require("onedark").load()
-		end,
+			-- vim.cmd("colorscheme monokai-nightasty")
+		end
 	},
-	-- {
-	-- 	'maxmx03/solarized.nvim',
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	---@type solarized.config
-	-- 	opts = {},
-	-- 	config = function(_, opts)
-	-- 		vim.o.termguicolors = true
-	-- 		require('solarized').setup(opts)
-	-- 	end,
-	-- },
+
 }
