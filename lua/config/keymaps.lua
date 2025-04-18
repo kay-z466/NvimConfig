@@ -110,7 +110,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.keymap.set("n", "<leader>ko", function()
-	local file_path = vim.api.nvim_buf_get_name(0)                 -- Get the current file's full path
+	local file_path = vim.api.nvim_buf_get_name(0)               -- Get the current file's full path
 	vim.fn.system("kate " .. vim.fn.shellescape(file_path) .. " &") -- Open the file in Kate
 end, { desc = "Open current file in Kate", silent = true })
 
