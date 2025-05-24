@@ -9,7 +9,7 @@ local function open_vifm()
 	local tmpfile = "/tmp/vifm_selected"
 
 	-- Command to open default terminal($TERM) and run vifm
-	local terminal_cmd = "$TERM -e vifm --choose-files " .. tmpfile
+	local terminal_cmd = "footclient -e vifm --choose-files " .. tmpfile
 
 	-- Run the command
 	vim.fn.jobstart(terminal_cmd, { --jobstart for async VIFM instance makes it less laggy
