@@ -1,11 +1,9 @@
 return {
 	{
-		"ellisonleao/gruvbox.nvim",
-		config = function()
-			-- vim.cmd("colorscheme gruvbox")
-		end
+		"Mofiqul/adwaita.nvim",
+		lazy = false,
+		priority = 1000,
 	},
-
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
@@ -18,8 +16,14 @@ return {
 					}
 				end,
 			}
-			vim.cmd("colorscheme catppuccin-macchiato")
+			-- vim.cmd("colorscheme catppuccin-macchiato")
 		end,
 	},
+	-- {
+	-- 	"folke/tokyonight.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	opts = {},
+	-- }
 
 }
