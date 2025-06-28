@@ -1,5 +1,4 @@
-vim.g.mapleader =
-" "
+vim.g.mapleader = " "
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
@@ -20,3 +19,5 @@ vim.opt.foldlevelstart = 99
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- vim.opt.foldcolumn = "1"
+-- vim.api.nvim_set_hl(0, "FloatBorder", { fg = "NONE", bg = "NONE" })
+vim.cmd("colorscheme habamax")
