@@ -29,9 +29,17 @@ vim.api.nvim_create_user_command("VifmOpen", open_vifm, {}) -- Create a :VifmOpe
 
 -------------------------------------------------------------------------------------------------------
 -- Function to open lazygit
+
 local function open_lazygit()
-	os.execute("foot -e lazygit &")
+	local cwd = vim.fn.getcwd()
+	local cmd = { "foot", "-e", "lazygit" }
+
+	vim.fn.jobstart(cmd, {
+		cwd = cwd,
+		detach = true,
+	})
 end
+
 
 vim.api.nvim_create_user_command("LazyGitOpen", open_lazygit, {}) -- Create a :LazyGitOpen command
 
