@@ -118,3 +118,4 @@ end, { desc = "Open current file in Kate", silent = true })
 --------------------------------------------------------------------------Custom Functions-----------------------------------------------------------------------
 vim.keymap.set("n", "<Leader>vf", "<Cmd>VifmOpen<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>lg", "<Cmd>LazyGitOpen<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-c>", "<Cmd>ColorPickOklch<CR>", { noremap = true, silent = true })

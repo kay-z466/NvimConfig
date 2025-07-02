@@ -19,5 +19,6 @@ vim.opt.foldlevelstart = 99
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- vim.opt.foldcolumn = "1"
--- vim.api.nvim_set_hl(0, "FloatBorder", { fg = "NONE", bg = "NONE" })
-vim.cmd("colorscheme habamax")
+-- vim.cmd("colorscheme habamax")
+vim.opt.title = true
+vim.opt.titlestring = "nvim~%t"
