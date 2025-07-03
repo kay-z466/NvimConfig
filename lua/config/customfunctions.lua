@@ -12,7 +12,7 @@ local function open_vifm()
 	local terminal_cmd = "foot -e vifm --choose-files " .. tmpfile --TODO add support for konsole
 
 	-- Run the command
-	vim.fn.jobstart(terminal_cmd, { --jobstart for async VIFM instance makes it less laggy
+	vim.fn.jobstart(terminal_cmd, { --jobstart for async VIFM instance makes it less laggy + no editor warnings
 		on_exit = function(_, exit_code)
 			if exit_code == 0 then
 				-- Read the selected file after vifm exits

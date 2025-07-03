@@ -46,7 +46,6 @@ vim.api.nvim_set_keymap("n", "<leader>dt", "<cmd>Telescope diagnostics<CR>", { n
 keymap({ "n", "v" }, "<Leader>y", '"+y', { noremap = true, silent = true })
 ----------------------------------------------------------------------------------------------------------------------------
 -- PLUGIN KEYBINDINGS
-keymap({ "n" }, "<Leader>fe", "<Cmd>Neotree toggle<CR>", { noremap = true, silent = true })
 keymap({ "n" }, "<Leader>bb", "<Cmd>Telescope buffers<CR>", { noremap = true, silent = true })
 keymap({ "n" }, "<Leader>fo", "<Cmd>Telescope oldfiles<CR>", { noremap = true, silent = true })
 keymap({ "n" }, "<Leader>ff", "<Cmd>Telescope find_files<CR>", { noremap = true, silent = true })
@@ -55,6 +54,7 @@ keymap({ "n" }, "<Leader>fg", "<Cmd>Telescope live_grep<CR>", { noremap = true, 
 keymap({ "n" }, "<Leader>ht", "<Cmd>Telescope colorscheme<CR>", { noremap = true, silent = true })
 keymap({ "n" }, "<Leader>fp", "<Cmd>Telescope git_files<CR>", { noremap = true, silent = true })
 keymap({ "n" }, "<Leader>cp", "<Cmd>ColorPickOklch<CR>", { noremap = true, silent = true })
+keymap({ "n" }, "<Leader>de", "<Cmd>Oil<CR>", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<2-LeftMouse>', ':lua pcall(require("oklch-color-picker").pick_under_cursor)<CR>',
 -- 	{ noremap = true, silent = true })
 keymap({ "n" }, "<Leader>cd", "<Cmd>Telescope zoxide list<CR>", { noremap = true, silent = true })
@@ -116,6 +116,6 @@ end, { desc = "Open current file in Kate", silent = true })
 
 
 --------------------------------------------------------------------------Custom Functions-----------------------------------------------------------------------
-vim.keymap.set("n", "<Leader>vf", "<Cmd>VifmOpen<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>fe", "<Cmd>VifmOpen<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>lg", "<Cmd>LazyGitOpen<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<A-c>", "<Cmd>ColorPickOklch<CR>", { noremap = true, silent = true })
